@@ -132,9 +132,7 @@ The managed object model for the application. It is a fatal error for the applic
 
 - (void)cl_performBackgroundTask:(void (^)(NSManagedObjectContext * _Nonnull))block {
     NSManagedObjectContext *privateContext = [self cl_newBackgroundContext];
-    NSLog(@"%@", [NSThread currentThread]);
     [privateContext performBlock:^{
-        NSLog(@"%@", [NSThread currentThread]);
         if (block) {
             block(privateContext);
         }

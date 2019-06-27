@@ -172,24 +172,27 @@
     
     [CLCoreDateManager.shareManager cl_performBackgroundTask:^(NSManagedObjectContext * _Nonnull privateContext) {
         
-        [NSThread currentThread];
+         NSLog(@"======== session begin, --thread:%@", [NSThread currentThread]);
+
 //        [CLCoreDateManager.shareManager.mainContext performBlockAndWait:^{
-//            NSLog(@"0 开始");
+//            NSLog(@"========  main 开始");
 //           [self batchCreatUserInContext:CLCoreDateManager.shareManager.mainContext];
-//            NSLog(@"0 结束");
+//            NSLog(@"========  main 结束");
 //        }];
         
 //        [privateContext performBlockAndWait:^{
-//            NSLog(@"private session_1 begin, --thread:%@", [NSThread currentThread]);
+//            NSLog(@"======== private session_1 begin, --thread:%@", [NSThread currentThread]);
 //            [self batchCreatUserInContext:privateContext];
-//            NSLog(@"private session_1 end, --thread:%@", [NSThread currentThread]);
+//            NSLog(@"======== private session_1 end, --thread:%@", [NSThread currentThread]);
 //        }];
         
         [privateContext performBlockAndWait:^{
-            NSLog(@"private session_2 begin, --thread:%@", [NSThread currentThread]);
+            NSLog(@"======== private session_2 begin, --thread:%@", [NSThread currentThread]);
             [self batchCreatUserInContext:privateContext];
-            NSLog(@"private session_2 end, --thread:%@",[NSThread currentThread]);
+            NSLog(@"======== private session_2 end, --thread:%@",[NSThread currentThread]);
         }];
+        
+        NSLog(@"======== session end, --thread:%@", [NSThread currentThread]);
         
         [CLCoreDateManager.shareManager cl_saveMainContext];
     }];
