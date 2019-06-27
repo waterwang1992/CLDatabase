@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CLCoreDateManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [CLCoreDateManager shareManager];
     return YES;
 }
 
@@ -50,16 +52,16 @@
 }
 
 
-//#pragma mark - Core Data stack
-//
-//
+#pragma mark - Core Data stack
+
+
 //@synthesize persistentContainer = _persistentContainer;
 //
 //- (NSPersistentContainer *)persistentContainer {
 //    // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
 //    @synchronized (self) {
 //        if (_persistentContainer == nil) {
-//            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"CLCoreDataDemo"];
+//            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"CLCoreData"];
 //            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
 //                if (error != nil) {
 //                    // Replace this implementation with code to handle the error appropriately.
@@ -96,6 +98,5 @@
 //        abort();
 //    }
 //}
-//*/
 
 @end

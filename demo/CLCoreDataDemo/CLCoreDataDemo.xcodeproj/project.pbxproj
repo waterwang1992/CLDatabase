@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C50BF75022C10773006EBA87 /* CLCoreDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C50BF74F22C10773006EBA87 /* CLCoreDateManager.m */; };
+		C50BF75422C2069A006EBA87 /* CLCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C50BF75222C2069A006EBA87 /* CLCoreData.xcdatamodeld */; };
+		C57E579522C3624000934FFD /* CLHouseMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E578B22C3624000934FFD /* CLHouseMO+CoreDataClass.m */; };
+		C57E579722C3624000934FFD /* CLCarMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E578F22C3624000934FFD /* CLCarMO+CoreDataClass.m */; };
+		C57E579922C3624000934FFD /* CLUserMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E579322C3624000934FFD /* CLUserMO+CoreDataClass.m */; };
+		C57E57C522C369EF00934FFD /* CLUserMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E57C022C369EF00934FFD /* CLUserMO+CoreDataProperties.m */; };
+		C57E57C622C369EF00934FFD /* CLHouseMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E57C222C369EF00934FFD /* CLHouseMO+CoreDataProperties.m */; };
+		C57E57C722C369EF00934FFD /* CLCarMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E57C422C369EF00934FFD /* CLCarMO+CoreDataProperties.m */; };
 		C5B92F49223B8FA300F30E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B92F48223B8FA300F30E1E /* AppDelegate.m */; };
 		C5B92F4C223B8FA300F30E1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B92F4B223B8FA300F30E1E /* ViewController.m */; };
 		C5B92F4F223B8FA300F30E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B92F4D223B8FA300F30E1E /* Main.storyboard */; };
-		C5B92F52223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5B92F50223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodeld */; };
 		C5B92F54223B8FA400F30E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B92F53223B8FA400F30E1E /* Assets.xcassets */; };
 		C5B92F57223B8FA400F30E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B92F55223B8FA400F30E1E /* LaunchScreen.storyboard */; };
 		C5B92F5A223B8FA400F30E1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B92F59223B8FA400F30E1E /* main.m */; };
@@ -36,13 +43,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C50BF74E22C10773006EBA87 /* CLCoreDateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCoreDateManager.h; sourceTree = "<group>"; };
+		C50BF74F22C10773006EBA87 /* CLCoreDateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCoreDateManager.m; sourceTree = "<group>"; };
+		C50BF75322C2069A006EBA87 /* CLCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CLCoreData.xcdatamodel; sourceTree = "<group>"; };
+		C57E578A22C3624000934FFD /* CLHouseMO+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLHouseMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		C57E578B22C3624000934FFD /* CLHouseMO+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLHouseMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		C57E578E22C3624000934FFD /* CLCarMO+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLCarMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		C57E578F22C3624000934FFD /* CLCarMO+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLCarMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		C57E579222C3624000934FFD /* CLUserMO+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLUserMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		C57E579322C3624000934FFD /* CLUserMO+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLUserMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		C57E57BF22C369EF00934FFD /* CLUserMO+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLUserMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C57E57C022C369EF00934FFD /* CLUserMO+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLUserMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C57E57C122C369EF00934FFD /* CLHouseMO+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLHouseMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C57E57C222C369EF00934FFD /* CLHouseMO+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLHouseMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C57E57C322C369EF00934FFD /* CLCarMO+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLCarMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C57E57C422C369EF00934FFD /* CLCarMO+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLCarMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C5B92F44223B8FA300F30E1E /* CLCoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLCoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B92F47223B8FA300F30E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5B92F48223B8FA300F30E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C5B92F4A223B8FA300F30E1E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C5B92F4B223B8FA300F30E1E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5B92F4E223B8FA300F30E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C5B92F51223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CLCoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
 		C5B92F53223B8FA400F30E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5B92F56223B8FA400F30E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5B92F58223B8FA400F30E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +101,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C57E56E022C351FC00934FFD /* ManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				C57E578E22C3624000934FFD /* CLCarMO+CoreDataClass.h */,
+				C57E578F22C3624000934FFD /* CLCarMO+CoreDataClass.m */,
+				C57E57C322C369EF00934FFD /* CLCarMO+CoreDataProperties.h */,
+				C57E57C422C369EF00934FFD /* CLCarMO+CoreDataProperties.m */,
+				C57E578A22C3624000934FFD /* CLHouseMO+CoreDataClass.h */,
+				C57E578B22C3624000934FFD /* CLHouseMO+CoreDataClass.m */,
+				C57E57C122C369EF00934FFD /* CLHouseMO+CoreDataProperties.h */,
+				C57E57C222C369EF00934FFD /* CLHouseMO+CoreDataProperties.m */,
+				C57E579222C3624000934FFD /* CLUserMO+CoreDataClass.h */,
+				C57E579322C3624000934FFD /* CLUserMO+CoreDataClass.m */,
+				C57E57BF22C369EF00934FFD /* CLUserMO+CoreDataProperties.h */,
+				C57E57C022C369EF00934FFD /* CLUserMO+CoreDataProperties.m */,
+			);
+			path = ManagedObject;
+			sourceTree = "<group>";
+		};
 		C5B92F3B223B8FA300F30E1E = {
 			isa = PBXGroup;
 			children = (
@@ -103,16 +143,19 @@
 		C5B92F46223B8FA300F30E1E /* CLCoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C57E56E022C351FC00934FFD /* ManagedObject */,
 				C5B92F47223B8FA300F30E1E /* AppDelegate.h */,
 				C5B92F48223B8FA300F30E1E /* AppDelegate.m */,
 				C5B92F4A223B8FA300F30E1E /* ViewController.h */,
 				C5B92F4B223B8FA300F30E1E /* ViewController.m */,
+				C50BF74E22C10773006EBA87 /* CLCoreDateManager.h */,
+				C50BF74F22C10773006EBA87 /* CLCoreDateManager.m */,
 				C5B92F4D223B8FA300F30E1E /* Main.storyboard */,
 				C5B92F53223B8FA400F30E1E /* Assets.xcassets */,
 				C5B92F55223B8FA400F30E1E /* LaunchScreen.storyboard */,
 				C5B92F58223B8FA400F30E1E /* Info.plist */,
 				C5B92F59223B8FA400F30E1E /* main.m */,
-				C5B92F50223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodeld */,
+				C50BF75222C2069A006EBA87 /* CLCoreData.xcdatamodeld */,
 			);
 			path = CLCoreDataDemo;
 			sourceTree = "<group>";
@@ -265,10 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5B92F52223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodeld in Sources */,
+				C50BF75422C2069A006EBA87 /* CLCoreData.xcdatamodeld in Sources */,
+				C57E579922C3624000934FFD /* CLUserMO+CoreDataClass.m in Sources */,
 				C5B92F4C223B8FA300F30E1E /* ViewController.m in Sources */,
+				C57E57C522C369EF00934FFD /* CLUserMO+CoreDataProperties.m in Sources */,
 				C5B92F5A223B8FA400F30E1E /* main.m in Sources */,
 				C5B92F49223B8FA300F30E1E /* AppDelegate.m in Sources */,
+				C57E57C722C369EF00934FFD /* CLCarMO+CoreDataProperties.m in Sources */,
+				C50BF75022C10773006EBA87 /* CLCoreDateManager.m in Sources */,
+				C57E57C622C369EF00934FFD /* CLHouseMO+CoreDataProperties.m in Sources */,
+				C57E579522C3624000934FFD /* CLHouseMO+CoreDataClass.m in Sources */,
+				C57E579722C3624000934FFD /* CLCarMO+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VUJHXMQB4;
 				INFOPLIST_FILE = CLCoreDataDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VUJHXMQB4;
 				INFOPLIST_FILE = CLCoreDataDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,13 +637,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C5B92F50223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodeld */ = {
+		C50BF75222C2069A006EBA87 /* CLCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C5B92F51223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodel */,
+				C50BF75322C2069A006EBA87 /* CLCoreData.xcdatamodel */,
 			);
-			currentVersion = C5B92F51223B8FA300F30E1E /* CLCoreDataDemo.xcdatamodel */;
-			path = CLCoreDataDemo.xcdatamodeld;
+			currentVersion = C50BF75322C2069A006EBA87 /* CLCoreData.xcdatamodel */;
+			path = CLCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

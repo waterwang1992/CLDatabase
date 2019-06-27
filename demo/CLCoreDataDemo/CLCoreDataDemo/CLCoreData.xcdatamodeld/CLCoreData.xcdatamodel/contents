@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="CLCar" representedClassName="CLCarMO" syncable="YES">
+        <attribute name="carBrand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CLUser" inverseName="cars" inverseEntity="CLUser" syncable="YES"/>
+    </entity>
+    <entity name="CLHouse" representedClassName="CLHouseMO" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="houseId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CLUser" inverseName="houses" inverseEntity="CLUser" syncable="YES"/>
+    </entity>
+    <entity name="CLUser" representedClassName="CLUserMO" syncable="YES">
+        <attribute name="secionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CLCar" inverseName="user" inverseEntity="CLCar" syncable="YES"/>
+        <relationship name="houses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CLHouse" inverseName="user" inverseEntity="CLHouse" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="CLUser"/>
+        </fetchedProperty>
+    </entity>
+    <fetchRequest name="CLFetchHouseId" entity="CLHouse" predicateString="houseId BEGINSWITH &quot;haha&quot;"/>
+    <configuration name="CLConfiguration1">
+        <memberEntity name="CLUser"/>
+    </configuration>
+    <configuration name="CLConfiguraton2">
+        <memberEntity name="CLHouse"/>
+        <memberEntity name="CLCar"/>
+    </configuration>
+    <elements>
+        <element name="CLCar" positionX="-2146.8203125" positionY="-7768.4453125" width="128" height="90"/>
+        <element name="CLHouse" positionX="-2043.6953125" positionY="-7903.36328125" width="128" height="90"/>
+        <element name="CLUser" positionX="-1908" positionY="-7830" width="128" height="149"/>
+    </elements>
+</model>
