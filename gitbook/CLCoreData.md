@@ -32,5 +32,8 @@ CoreData框架不仅限于数据库样式的应用程序，也不 expectation �
 该框架同样可用作矢量图形应用程序（如Sketch）或演示应用程序（如Keynote）的基础。
 ```
 
+[参考文档 https://developer.apple.com/documentation/coredata?language=objc](https://developer.apple.com/documentation/coredata?language=objc)
+[参看文档 programming guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html)
+
 
 
