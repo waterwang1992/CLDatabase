@@ -12,7 +12,7 @@
     </entity>
     <entity name="CLUser" representedClassName="CLUserMO" syncable="YES">
         <attribute name="secionId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CLCar" inverseName="user" inverseEntity="CLCar" syncable="YES"/>
         <relationship name="houses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CLHouse" inverseName="user" inverseEntity="CLHouse" syncable="YES"/>

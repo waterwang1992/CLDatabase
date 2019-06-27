@@ -9,18 +9,22 @@
 
 #import "CLUserMO+CoreDataClass.h"
 
+NSString *const CLCoreData_EntityName_User = @"CLUser";
+NSString *const CLCoreData_PropertyName_UserId = @"userId";
+NSString *const CLCoreData_PropertyName_SecionId = @"secionId";
+
 @implementation CLUserMO
 
-+ (instancetype)userWithUserId:(NSString *)userId userName:(NSString *)userName inContext:(NSManagedObjectContext *)context{
++ (instancetype)userWithUserId:(NSInteger)userId userName:(NSString *)userName inContext:(NSManagedObjectContext *)context{
     
     CLUserMO *user = nil;
     if (context == nil) {
         return user;
     }
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CLUser"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"userId" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"userId", userId];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:CLCoreData_EntityName_User];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:CLCoreData_PropertyName_UserId ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K = %ld", CLCoreData_PropertyName_UserId, userId];
     
     NSError *fetchError = nil;
     NSArray *result = [context executeFetchRequest:request error:&fetchError];
@@ -31,7 +35,7 @@
     user = [result firstObject];
     
     if (!user) {
-        user = [[CLUserMO alloc] initWithEntity:[NSEntityDescription entityForName:@"CLUser" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
+        user = [[CLUserMO alloc] initWithEntity:[NSEntityDescription entityForName:CLCoreData_EntityName_User inManagedObjectContext:context] insertIntoManagedObjectContext:context];
         user.userId = userId;
         user.userName = userName;
         user.secionId = [userName substringToIndex:1];
@@ -39,9 +43,9 @@
     return user;
 }
 
-+ (NSString *)maxUserIdInContext:(NSManagedObjectContext *)context {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CLUser"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"userId" ascending:YES]];
++ (NSInteger)maxUserIdInContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:CLCoreData_EntityName_User];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:CLCoreData_PropertyName_UserId ascending:YES]];
     
     NSError *fetchError = nil;
     NSArray *result = [context executeFetchRequest:request error:&fetchError];

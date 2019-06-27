@@ -12,13 +12,17 @@
 
 @class CLCarMO, CLHouseMO;
 
+extern NSString *const CLCoreData_EntityName_User;
+extern NSString *const CLCoreData_PropertyName_UserId;
+extern NSString *const CLCoreData_PropertyName_SecionId;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CLUserMO : NSManagedObject
 
-+ (instancetype)userWithUserId:(NSString *)userId userName:(NSString *)userName inContext:(NSManagedObjectContext *)context;
++ (instancetype)userWithUserId:(NSInteger)userId userName:(NSString *)userName inContext:(NSManagedObjectContext *)context;
 
-+ (NSString *)maxUserIdInContext:(NSManagedObjectContext *)context;
++ (NSInteger)maxUserIdInContext:(NSManagedObjectContext *)context;
 
 @end
 

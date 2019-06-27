@@ -2,7 +2,7 @@
 //  CLUserMO+CoreDataProperties.h
 //  CLCoreDataDemo
 //
-//  Created by 周冯婷 on 2019/6/26.
+//  Created by 周冯婷 on 2019/6/27.
 //  Copyright © 2019年 周冯婷. All rights reserved.
 //
 //
@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<CLUserMO *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *userId;
-@property (nullable, nonatomic, copy) NSString *userName;
 @property (nullable, nonatomic, copy) NSString *secionId;
+@property (nonatomic) int64_t userId;
+@property (nullable, nonatomic, copy) NSString *userName;
 @property (nullable, nonatomic, retain) NSSet<CLCarMO *> *cars;
 @property (nullable, nonatomic, retain) NSSet<CLHouseMO *> *houses;
 

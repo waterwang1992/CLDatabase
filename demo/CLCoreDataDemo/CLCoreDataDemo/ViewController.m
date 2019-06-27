@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"CLCoreData";
+    self.title = CLCoreData_EntityName_User;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"batchCreat" style:UIBarButtonItemStylePlain target:self action:@selector(batchCreatUsers)];
     
@@ -29,7 +29,10 @@
 }
 
 - (void)setupView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 375, 600) style:UITableViewStyleGrouped];
+    
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, window.frame.size.width, window.frame.size.height - 100) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
@@ -39,17 +42,17 @@
 
 
 - (void)initializeFetchedResultsController {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CLUser"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:CLCoreData_EntityName_User];
     
-    NSSortDescriptor *seciotnNameSort = [NSSortDescriptor sortDescriptorWithKey:@"secionId" ascending:YES];
-    NSSortDescriptor *userNameSort = [NSSortDescriptor sortDescriptorWithKey:@"userName" ascending:YES];
+    NSSortDescriptor *seciotnNameSort = [NSSortDescriptor sortDescriptorWithKey:CLCoreData_PropertyName_SecionId ascending:YES];
+    NSSortDescriptor *userIdSort = [NSSortDescriptor sortDescriptorWithKey:CLCoreData_PropertyName_UserId ascending:YES];
     
-    [request setSortDescriptors:@[seciotnNameSort, userNameSort]];
+    [request setSortDescriptors:@[seciotnNameSort, userIdSort]];
     request.predicate = nil;
     
     NSManagedObjectContext *moc = [CLCoreDateManager shareManager].mainContext; //Retrieve the main queue NSManagedObjectContext
     
-    _feCtr = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:@"secionId" cacheName:nil];
+    _feCtr = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:CLCoreData_PropertyName_SecionId cacheName:nil];
     _feCtr.delegate = self;
     
     NSError *error = nil;
@@ -63,12 +66,8 @@
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    
     CLUserMO *user = [self.feCtr objectAtIndexPath:indexPath];
-    
     cell.textLabel.text = user.userName;
-    cell.detailTextLabel.text = user.userId;
-    
     return cell;
 }
 
@@ -180,11 +179,11 @@
 //            NSLog(@"0 结束");
 //        }];
         
-        [privateContext performBlockAndWait:^{
-            NSLog(@"private session_1 begin, --thread:%@", [NSThread currentThread]);
-            [self batchCreatUserInContext:privateContext];
-            NSLog(@"private session_1 end, --thread:%@", [NSThread currentThread]);
-        }];
+//        [privateContext performBlockAndWait:^{
+//            NSLog(@"private session_1 begin, --thread:%@", [NSThread currentThread]);
+//            [self batchCreatUserInContext:privateContext];
+//            NSLog(@"private session_1 end, --thread:%@", [NSThread currentThread]);
+//        }];
         
         [privateContext performBlockAndWait:^{
             NSLog(@"private session_2 begin, --thread:%@", [NSThread currentThread]);
@@ -192,17 +191,16 @@
             NSLog(@"private session_2 end, --thread:%@",[NSThread currentThread]);
         }];
         
-        //[CLCoreDateManager.shareManager cl_saveMainContext];
+        [CLCoreDateManager.shareManager cl_saveMainContext];
     }];
     
 }
 
 - (void)batchCreatUserInContext:(NSManagedObjectContext *)context {
-    NSString *userId = [CLUserMO maxUserIdInContext:context];
-    NSInteger maxId = userId ? userId.integerValue : 0;
+    NSInteger maxId = [CLUserMO maxUserIdInContext:context];
     for (NSInteger i = maxId + 1; i < maxId + 1001; i++) {
         NSString *randomName = [NSString stringWithFormat:@"%@_userName_%ld", [self randomSectionStr], i];
-        [CLUserMO userWithUserId:[NSString stringWithFormat:@"%ld", i] userName:randomName inContext:context];
+        [CLUserMO userWithUserId:i userName:randomName inContext:context];
         [context save:nil];
     };
 }
@@ -216,7 +214,7 @@
 - (void)clear {
     NSManagedObjectContext *context = [CLCoreDateManager shareManager].mainContext;
     //1.创建查询请求 EntityName：想要清楚的实体的名字
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"CLUser"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:CLCoreData_EntityName_User];
     
    NSArray *result = [context executeFetchRequest:request error:nil];
     
@@ -232,7 +230,7 @@
 - (void)newBatchDelete {
     NSManagedObjectContext *context = [CLCoreDateManager shareManager].mainContext;
     //1.创建查询请求 EntityName：想要清楚的实体的名字
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"CLUser"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:CLCoreData_EntityName_User];
     
     //2.创建删除请求  参数是：查询请求
     //NSBatchDeleteRequest是iOS9之后新增的API，不兼容iOS8及以前的系统
