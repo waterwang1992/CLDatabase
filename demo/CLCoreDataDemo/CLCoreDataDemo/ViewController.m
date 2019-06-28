@@ -49,6 +49,7 @@
     
     [request setSortDescriptors:@[seciotnNameSort, userIdSort]];
     request.predicate = nil;
+    request.fetchLimit = 20;
     
     NSManagedObjectContext *moc = [CLCoreDateManager shareManager].mainContext; //Retrieve the main queue NSManagedObjectContext
     
@@ -201,7 +202,7 @@
 
 - (void)batchCreatUserInContext:(NSManagedObjectContext *)context {
     NSInteger maxId = [CLUserMO maxUserIdInContext:context];
-    for (NSInteger i = maxId + 1; i < maxId + 1001; i++) {
+    for (NSInteger i = maxId + 1; i < maxId + 101; i++) {
         NSString *randomName = [NSString stringWithFormat:@"%@_userName_%ld", [self randomSectionStr], i];
         [CLUserMO userWithUserId:i userName:randomName inContext:context];
         [context save:nil];

@@ -111,7 +111,7 @@ The managed object model for the application. It is a fatal error for the applic
     if (_mainContext == nil) {
         return;
     }
-    [_mainContext performBlock:^{
+    [_mainContext performBlockAndWait:^{
         if ([self.mainContext hasChanges]) {
             NSError *error = nil;
             if (![self.mainContext save:&error]) {
@@ -127,6 +127,7 @@ The managed object model for the application. It is a fatal error for the applic
     if (_mainContext == nil) return nil;
     NSManagedObjectContext *privateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [privateContext setParentContext:_mainContext];
+    privateContext.automaticallyMergesChangesFromParent = YES;
     return privateContext;
 }
 
